@@ -1,0 +1,29 @@
+light-town/docs/本地文件运行验证.md
+  s_e5da7591620799::t_9ae65a12c914b0 1-25
+light-town/docs/验收记录.md
+  s_e5da7591620799::t_de298c7595ed4c 1-125
+light-town/index.html
+  s_e5da7591620799::t_2facb6b9fde3ea 1-54
+light-town/package.json
+  s_e5da7591620799::t_a2c5ca5c734e38 1-43
+light-town/scripts/standalone.mjs
+  s_e5da7591620799::t_1bf45a16390fc0 1-42
+light-town/vite.config.ts
+  s_e5da7591620799::t_96cec4743ce5ee 1-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "501a3a2e11b1edb596e7be5e25f6b97e9f3a8f7d",
+  "prompts": {},
+  "sessions": {
+    "s_e5da7591620799": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1ca68-6090-7f92-91a9-6d0a2d62c1c7",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "000522 <wangmin@fcbox.com>"
+    }
+  }
+}
