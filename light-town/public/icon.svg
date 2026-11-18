@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>&#x70B9;&#x4EAE;&#x5C0F;&#x9547;</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0D1838"/>
+      <stop offset="1" stop-color="#25397E"/>
+    </linearGradient>
+    <radialGradient id="warm" cx="250" cy="285" r="235" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFC45C" stop-opacity="0.5"/>
+      <stop offset="0.55" stop-color="#FFC45C" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#FFC45C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pane" cx="50%" cy="42%" r="70%">
+      <stop offset="0" stop-color="#FFF4C7"/>
+      <stop offset="0.55" stop-color="#FFD56B"/>
+      <stop offset="1" stop-color="#FFAE45"/>
+    </radialGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#FFC45C" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#FFC45C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="starGlow">
+      <stop offset="0" stop-color="#FFE7A3" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FFE7A3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#sky)"/>
+  <rect width="512" height="512" rx="112" fill="url(#warm)"/>
+  <g fill="#FFF3C4">
+    <circle cx="96" cy="86" r="5"/>
+    <circle cx="160" cy="44" r="3.5"/>
+    <circle cx="70" cy="196" r="4"/>
+    <circle cx="462" cy="236" r="4.5"/>
+    <path d="M118,136 Q121,121 136,118 Q121,115 118,100 Q115,115 100,118 Q115,121 118,136Z"/>
+  </g>
+  <circle cx="404" cy="118" r="70" fill="url(#starGlow)"/>
+  <path transform="translate(404 118)" d="M0,-40 L11.3,-15.5 L38,-12.4 L18.3,5.9 L23.5,32.4 L0,19.2 L-23.5,32.4 L-18.3,5.9 L-38,-12.4 L-11.3,-15.5Z" fill="#FFD56B" stroke="#FFE7A3" stroke-width="7" stroke-linejoin="round"/>
+  <path transform="translate(404 118)" d="M0,-22 L6.2,-8.5 L21,-6.8 L10,3.3 L12.9,17.8 L0,10.6 L-12.9,17.8 L-10,3.3 L-21,-6.8 L-6.2,-8.5Z" fill="#FFF4C7"/>
+  <g stroke="#121A3E" stroke-width="5" stroke-linejoin="round">
+    <polygon points="72.4,341.8 276.4,443.8 276.4,474.4 72.4,372.4" fill="#2D6E63"/>
+    <polygon points="276.4,443.8 439.6,362.2 439.6,392.8 276.4,474.4" fill="#235850"/>
+    <polygon points="235.6,260.2 439.6,362.2 276.4,443.8 72.4,341.8" fill="#3E8E7E"/>
+  </g>
+  <path d="M332.5,375 L362,390 L392,375" fill="none" stroke="#A8C9BE" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 14" opacity="0.8"/>
+  <g>
+    <circle cx="96" cy="330" r="17" fill="#2C7D6E" stroke="#121A3E" stroke-width="4"/>
+    <circle cx="120" cy="322" r="15" fill="#2C7D6E" stroke="#121A3E" stroke-width="4"/>
+    <circle cx="108" cy="312" r="18" fill="#3FA48E" stroke="#121A3E" stroke-width="4"/>
+    <circle cx="102" cy="304" r="4" fill="#EE82A6"/>
+    <circle cx="116" cy="314" r="3.5" fill="#F2C45A"/>
+  </g>
+  <g stroke="#121A3E" stroke-width="5" stroke-linejoin="round">
+    <polygon points="222.9,70.2 245.8,81.7 245.8,158.2 222.9,146.7" fill="#9A6378"/>
+    <polygon points="245.8,81.7 266.2,71.5 266.2,148 245.8,158.2" fill="#7A4A60"/>
+    <polygon points="215.2,62.6 245.8,77.9 245.8,90.6 215.2,75.3" fill="#7F8BB5"/>
+    <polygon points="245.8,77.9 273.9,63.9 273.9,76.6 245.8,90.6" fill="#66719C"/>
+    <polygon points="243.3,48.6 273.9,63.9 245.8,77.9 215.2,62.6" fill="#A6B0D8"/>
+    <polygon points="148.9,196.5 271.3,257.7 271.3,405.6 148.9,344.4" fill="#A39CCB"/>
+    <polygon points="271.3,257.7 363.1,211.8 363.1,359.7 271.3,405.6" fill="#7B75AC"/>
+    <polygon points="271.3,257.7 363.1,211.8 317.2,142.9" fill="#7B75AC"/>
+  </g>
+  <ellipse cx="179.5" cy="292" rx="62" ry="58" fill="url(#halo)"/>
+  <ellipse cx="240.7" cy="322.7" rx="62" ry="58" fill="url(#halo)"/>
+  <polygon points="156.6,246.2 202.5,269.1 202.5,338 156.6,315" fill="#F2E6CF"/>
+  <polygon points="217.8,276.8 263.7,299.7 263.7,368.6 217.8,345.6" fill="#F2E6CF"/>
+  <polygon points="161.7,253.8 197.4,271.7 197.4,330.3 161.7,312.5" fill="url(#pane)"/>
+  <polygon points="222.9,284.4 258.6,302.3 258.6,360.9 222.9,343.1" fill="url(#pane)"/>
+  <path d="M179.5,262.8 L179.5,321.4 M161.7,283.2 L197.4,301 M240.7,293.4 L240.7,352 M222.9,313.8 L258.6,331.6" stroke="#4B3D5E" stroke-width="4.5" stroke-linecap="round"/>
+  <polygon points="298.8,311.5 335.6,293.1 335.6,373.4 298.8,391.8" fill="#F2E6CF"/>
+  <polygon points="301.9,313.8 332.5,298.5 332.5,375 301.9,390.3" fill="#6A4A63"/>
+  <circle cx="326" cy="338" r="3.2" fill="#FFD56B"/>
+  <g stroke="#121A3E" stroke-width="5" stroke-linejoin="round">
+    <polygon points="271.3,288.3 327.4,148 383.5,232.2 383.5,244.9 327.4,160.8 271.3,301" fill="#8E4A66"/>
+    <polygon points="128.5,216.9 271.3,288.3 271.3,301 128.5,229.6" fill="#A85A74"/>
+    <polygon points="128.5,216.9 271.3,288.3 327.4,148 184.6,76.6" fill="#D9798F"/>
+  </g>
+  <path d="M146.1,183.6 L281.7,251.4 M160.2,148.6 L295.8,216.4 M174.2,113.5 L309.8,181.3" stroke="#F2A9BB" stroke-width="3" opacity="0.4" stroke-linecap="round"/>
+  <path d="M184.6,76.6 L327.4,148" stroke="#F7C1CD" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="317.2" cy="199" r="44" fill="url(#halo)"/>
+  <g transform="matrix(2.55 -1.275 0 2.55 317.2 199)">
+    <circle r="9.5" fill="#F2E6CF"/>
+    <circle r="7" fill="url(#pane)"/>
+    <path d="M0,-7 L0,7 M-7,0 L7,0" stroke="#4B3D5E" stroke-width="1.6"/>
+  </g>
+</svg>

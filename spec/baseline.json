@@ -1,0 +1,42 @@
+{
+  "capturedAt": "2026-11-13",
+  "purpose": "源码识别与视觉参照；不代表本次测试结果",
+  "files": {
+    "light-town/src/styles/global.css": "11de85b5729e4d05a034c8d3e3f71930fb2d9c60e22f664e8870203324a21911",
+    "light-town/src/art/palette.ts": "6753ecd0a94c8d2c77034bbdde76e07a9066ad9d465f8d1fc06180d772fa4008",
+    "light-town/src/config/rules.ts": "675f33bea07fa2368b93cc81b85f3935f31d09876583480cd7e531319cd3eaf3",
+    "light-town/src/core/input.ts": "579625e07523bc40e33a8f172f19b8b5f5bbd97e238416fd9bcae7d6cb55662c",
+    "light-town/package.json": "5ac91a6669904fe8cc421e4233024c8419e780754c99a825c3bed9bdd20f90f1",
+    "light-town/scripts/standalone.mjs": "94194faea9208c60cd72823786e2ab0638f2aaeeb66b2dabea1ad15c7af1b51d"
+  },
+  "referenceScreenshots": [
+    "light-town/docs/evidence/screens/chrome-1280x800/01-home.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/02-partner.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/03-onboarding-welcome.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/04-onboarding-bumps.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/05-onboarding-hands.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/06-onboarding-demo.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/07-onboarding-done.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/08-town.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/09-parent-empty.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/10-mode-intro.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/11-practice.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/12-practice-missed.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/13-practice-idle-hint.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/14-practice-progress.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/15-practice-menu.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/16-result-celebrating.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/17-result.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/18-summary.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/19-town-after.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/20-wardrobe.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/21-wardrobe-select.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/22-route.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/23-festival-locked.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/24-parent.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/25-settings.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/26-settings-clear-1.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/27-settings-clear-2.jpg",
+    "light-town/docs/evidence/screens/chrome-1280x800/28-town-reduced-motion.jpg"
+  ]
+}

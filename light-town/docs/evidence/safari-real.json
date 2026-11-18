@@ -1,0 +1,166 @@
+{
+  "when": "2026-11-12T07:44:27.193Z",
+  "url": "http://127.0.0.1:4173/",
+  "browser": "Safari 26.5.2",
+  "platform": "macOS",
+  "notCovered": [
+    "Caps Lock key state",
+    "Chinese IME composition",
+    "whether the sound is pleasant"
+  ],
+  "passed": 18,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "home page loads with fresh storage",
+      "ok": true,
+      "ms": 196,
+      "detail": {
+        "viewport": "1280x808",
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5.2 Safari/605.1.15"
+      }
+    },
+    {
+      "name": "home → partner with the keyboard and Enter",
+      "ok": true,
+      "ms": 191
+    },
+    {
+      "name": "partner chosen with arrow keys and Enter",
+      "ok": true,
+      "ms": 135
+    },
+    {
+      "name": "guide: three steps, then the f/j demo (a wrong key only shows a hint)",
+      "ok": true,
+      "ms": 200,
+      "detail": {
+        "partner": "manman",
+        "attempts": 0,
+        "coins": 0
+      }
+    },
+    {
+      "name": "town, then the first level through its introductions (Enter only)",
+      "ok": true,
+      "ms": 600
+    },
+    {
+      "name": "typing feedback latency (keydown → painted frame)",
+      "ok": true,
+      "ms": 1307,
+      "detail": {
+        "n": 10,
+        "domMaxMs": 3,
+        "frameAvgMs": 20.3,
+        "frameMaxMs": 23
+      }
+    },
+    {
+      "name": "two wrong keys enlarge the hint; the correct key brings back the basic hint",
+      "ok": true,
+      "ms": 47,
+      "detail": {
+        "target": "f",
+        "attempts": 12
+      }
+    },
+    {
+      "name": "Shift + letter counts as correct and shows the Shift note",
+      "ok": true,
+      "ms": 31
+    },
+    {
+      "name": "Space in a level without space targets: not counted and the page does not scroll",
+      "ok": true,
+      "ms": 875,
+      "detail": {
+        "viewport": "1024x520",
+        "pageScrollable": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "name": "Escape pauses; Tab stays inside the menu; Enter on 继续 resumes without typing",
+      "ok": true,
+      "ms": 115,
+      "detail": {
+        "menuButtons": 4,
+        "focusStart": "继续"
+      }
+    },
+    {
+      "name": "switching to another tab pauses; keys are not counted until Enter",
+      "ok": true,
+      "ms": 1185
+    },
+    {
+      "name": "reload mid-level: same targets and position, paused until confirmed",
+      "ok": true,
+      "ms": 373,
+      "detail": {
+        "pos": 14,
+        "bulbsOn": 14
+      }
+    },
+    {
+      "name": "finish the level; Enter and Space on the result page do nothing",
+      "ok": true,
+      "ms": 3017,
+      "detail": {
+        "building": "小灯屋：已点亮 1/6",
+        "coins": 12,
+        "attempts": 26
+      }
+    },
+    {
+      "name": "end the session → summary → town shows 1/6",
+      "ok": true,
+      "ms": 145
+    },
+    {
+      "name": "sound: files loaded, no problem shown; muting in settings keeps the channel settings",
+      "ok": true,
+      "ms": 406,
+      "detail": {
+        "filesLoaded": 5,
+        "autoplay": "started"
+      }
+    },
+    {
+      "name": "layout at Mac, iPad and 200 % zoom sizes: no sideways scroll, 44 px targets, readable text",
+      "ok": true,
+      "ms": 17474,
+      "detail": {
+        "viewports": [
+          "1280x800",
+          "1024x768",
+          "768x1024",
+          "640x400"
+        ]
+      }
+    },
+    {
+      "name": "Space types a space target and does not scroll the page; Space in the menu presses 继续",
+      "ok": true,
+      "ms": 1147,
+      "detail": {
+        "pageScrollable": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "name": "practice page layout at Mac, iPad and 200 % zoom sizes",
+      "ok": true,
+      "ms": 2130,
+      "detail": {
+        "viewports": [
+          "1280x800",
+          "1024x768",
+          "768x1024",
+          "640x400"
+        ]
+      }
+    }
+  ]
+}

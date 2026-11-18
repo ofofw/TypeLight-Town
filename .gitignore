@@ -1,0 +1,14 @@
+.DS_Store
+node_modules/
+light-town/test-results/
+light-town/playwright-report/
+light-town/.cache/
+light-town/scripts/.venv/
+light-town/scripts/models/
+*.log
+
+# 构建产物（可用 npm run build 重建；根 index.html 为本地交付物，保留）
+light-town/dist/
+
+# macOS
+.DS_Store

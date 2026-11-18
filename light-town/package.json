@@ -1,0 +1,43 @@
+{
+  "name": "light-town",
+  "private": true,
+  "version": "1.0.0",
+  "description": "点亮小镇：中文儿童打字网页游戏",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:lan": "vite --host",
+    "build": "tsc --noEmit -p tsconfig.json && vite build && node scripts/standalone.mjs",
+    "preview": "vite preview",
+    "preview:lan": "vite preview --host",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.e2e.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "art:preview": "vitest run --config vitest.preview.config.ts",
+    "audio": "node scripts/audio/render.mjs && afconvert -f m4af -d aac -b 128000 -s 0 .cache/audio/town-loop.wav public/audio/music/town-loop.m4a",
+    "icons": "node scripts/icons.mjs",
+    "test:safari": "node scripts/safari-check.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0",
+    "@resvg/resvg-js": "2.6.2",
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  },
+  "allowScripts": {
+    "fsevents": false
+  }
+}

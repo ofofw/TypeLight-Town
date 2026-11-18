@@ -1,0 +1,17 @@
+{
+  "name": "点亮小镇",
+  "short_name": "点亮小镇",
+  "description": "给孩子的中文打字小游戏，用键盘一盏一盏点亮小镇的灯。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0D1838",
+  "theme_color": "#0D1838",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

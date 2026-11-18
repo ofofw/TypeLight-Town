@@ -1,0 +1,475 @@
+{
+  "format": "lighttown.profiles-backup",
+  "formatVersion": 1,
+  "appSaveVersion": 3,
+  "exportedAt": "2026-11-17T01:34:15.271Z",
+  "profiles": [
+    {
+      "profileId": "7367fb7c56c6a6f93c14ac02e38bc5cb",
+      "name": "玩家一",
+      "game": {
+        "schemaVersion": 2,
+        "revision": 9,
+        "createdAt": 1794879253489,
+        "updatedAt": 1794879255006,
+        "partner": "nuannuan",
+        "onboarded": true,
+        "buildings": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "currentBuilding": 0,
+        "coins": 88,
+        "owned": [],
+        "themesOwned": [
+          "warm"
+        ],
+        "theme": "warm",
+        "settled": [],
+        "levelSeq": 1,
+        "wordLevels": [],
+        "wordLevelsPlayed": 0,
+        "settings": {
+          "music": true,
+          "sfx": true,
+          "voice": true,
+          "musicVolume": 0.2,
+          "sfxVolume": 0.4,
+          "voiceVolume": 0.7,
+          "masterMute": false,
+          "reduceMotion": false
+        },
+        "course": {
+          "stage": 1,
+          "allComplete": false,
+          "nextMode": "keys",
+          "introSeen": 1,
+          "lastQualifying": null
+        },
+        "equipped": {
+          "head": null,
+          "scarf": null,
+          "lamp": null
+        },
+        "festival": {
+          "unlocked": false,
+          "roundsCompleted": 0,
+          "round": null
+        },
+        "session": {
+          "id": "Smwk0rkac",
+          "startedAt": 1794879254388,
+          "lastActivityAt": 1794879254583,
+          "levelsCompleted": 0,
+          "attempts": 3,
+          "correct": 3,
+          "effectiveMs": 117,
+          "coins": 0,
+          "buildingsAtStart": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "remindersShown": 0
+        },
+        "activeTask": {
+          "variant": "phase1",
+          "level": {
+            "id": "L1-2axove",
+            "seq": 1,
+            "entry": "light",
+            "mode": "keys",
+            "autoMode": true,
+            "courseStage": 1,
+            "courseLabel": "stage:1",
+            "keys": [
+              "f",
+              "j"
+            ],
+            "standard": true,
+            "buildingTarget": 0,
+            "replayBuilding": null,
+            "seed": 139300394,
+            "targets": [
+              "j",
+              "j",
+              "f",
+              "j",
+              "j",
+              "f",
+              "j",
+              "f",
+              "j",
+              "j",
+              "f",
+              "j",
+              "j",
+              "f",
+              "f",
+              "j",
+              "f",
+              "f",
+              "j",
+              "f",
+              "f",
+              "j",
+              "f",
+              "f"
+            ],
+            "words": null,
+            "wordStarts": null,
+            "pos": 3,
+            "attempts": 3,
+            "correct": 3,
+            "wrongStreak": 0,
+            "effectiveMs": 117,
+            "createdAt": 1794879254388,
+            "paused": true,
+            "activeSince": null,
+            "lastInputAt": 1794879254583,
+            "accountedUntil": null,
+            "targetShownAt": 1794879254583,
+            "festival": null,
+            "newKeyQuota": {
+              "f": 6,
+              "j": 6
+            },
+            "keyCounts": {
+              "j": {
+                "a": 2,
+                "c": 2
+              },
+              "f": {
+                "a": 1,
+                "c": 1
+              }
+            }
+          }
+        },
+        "lastResult": null,
+        "lastTaskResult": null,
+        "stats": {
+          "attempts": 3,
+          "correct": 3,
+          "effectiveMs": 117,
+          "levelsCompleted": 0,
+          "recent": [
+            [
+              "j",
+              1
+            ],
+            [
+              "j",
+              1
+            ],
+            [
+              "f",
+              1
+            ]
+          ],
+          "keys": {
+            "j": {
+              "attempts": 2,
+              "correct": 2,
+              "presented": 3
+            },
+            "f": {
+              "attempts": 1,
+              "correct": 1,
+              "presented": 1
+            }
+          },
+          "mistypes": {},
+          "daily": {
+            "2026-11-17": {
+              "attempts": 3,
+              "correct": 3,
+              "effectiveMs": 117,
+              "levels": 0
+            }
+          },
+          "levels": []
+        },
+        "seen": {
+          "mode:keys": true,
+          "mode:strip": true,
+          "mode:sign": true,
+          "mode:sign-space": true
+        },
+        "phase2": {
+          "contentVersion": "phase2-content-2",
+          "storyDone": [],
+          "maxObservedAt": 1794879255005,
+          "taskSeq": 0,
+          "exposed": {},
+          "learned": {},
+          "teaching": {},
+          "review": {},
+          "err": {},
+          "daily": {},
+          "dailyBonus": null,
+          "stats": {
+            "zh:story": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            },
+            "zh:errand": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            },
+            "zh:drill": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            },
+            "en:story": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            },
+            "en:errand": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            },
+            "en:drill": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "profileId": "27ea07b86582a1656ca9a8a4d418854c",
+      "name": "玩家二",
+      "game": {
+        "schemaVersion": 2,
+        "revision": 3,
+        "createdAt": 1794879253684,
+        "updatedAt": 1794879254914,
+        "partner": "nuannuan",
+        "onboarded": false,
+        "buildings": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "currentBuilding": 0,
+        "coins": 0,
+        "owned": [],
+        "themesOwned": [
+          "warm"
+        ],
+        "theme": "warm",
+        "settled": [],
+        "levelSeq": 0,
+        "wordLevels": [],
+        "wordLevelsPlayed": 0,
+        "settings": {
+          "music": true,
+          "sfx": true,
+          "voice": true,
+          "musicVolume": 0.2,
+          "sfxVolume": 0.4,
+          "voiceVolume": 0.7,
+          "masterMute": false,
+          "reduceMotion": false
+        },
+        "course": {
+          "stage": 1,
+          "allComplete": false,
+          "nextMode": "keys",
+          "introSeen": 0,
+          "lastQualifying": null
+        },
+        "equipped": {
+          "head": null,
+          "scarf": null,
+          "lamp": null
+        },
+        "festival": {
+          "unlocked": false,
+          "roundsCompleted": 0,
+          "round": null
+        },
+        "session": null,
+        "activeTask": null,
+        "lastResult": null,
+        "lastTaskResult": null,
+        "stats": {
+          "attempts": 0,
+          "correct": 0,
+          "effectiveMs": 0,
+          "levelsCompleted": 0,
+          "recent": [],
+          "keys": {},
+          "mistypes": {},
+          "daily": {},
+          "levels": []
+        },
+        "seen": {},
+        "phase2": {
+          "contentVersion": "phase2-content-2",
+          "storyDone": [],
+          "maxObservedAt": 1794879254713,
+          "taskSeq": 0,
+          "exposed": {},
+          "learned": {},
+          "teaching": {},
+          "review": {},
+          "err": {},
+          "daily": {},
+          "dailyBonus": null,
+          "stats": {
+            "zh:story": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            },
+            "zh:errand": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            },
+            "zh:drill": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            },
+            "en:story": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            },
+            "en:errand": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            },
+            "en:drill": {
+              "items": 0,
+              "firstSubmittedItems": 0,
+              "firstCorrectItems": 0,
+              "unaidedCorrectItems": 0,
+              "wrongSubmissions": 0,
+              "editOperations": 0,
+              "editStatAvailable": true,
+              "helpItems": 0,
+              "targetChars": 0,
+              "effectiveMs": 0
+            }
+          }
+        }
+      }
+    }
+  ]
+}

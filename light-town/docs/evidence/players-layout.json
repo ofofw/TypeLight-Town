@@ -1,0 +1,29 @@
+{
+  "browser": "157.0.8103.51",
+  "checks": [
+    {
+      "width": 1280,
+      "height": 800,
+      "selectorOverflow": false
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "selectorOverflow": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "selectorOverflow": false
+    },
+    {
+      "width": 640,
+      "height": 400,
+      "selectorOverflow": false
+    }
+  ],
+  "fixtureNames": [
+    "玩家一",
+    "玩家二"
+  ]
+}

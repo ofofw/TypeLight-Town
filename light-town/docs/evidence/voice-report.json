@@ -1,0 +1,73 @@
+{
+ "voice": "zf_001",
+ "lines": {
+  "choosePartner": {
+   "seconds": 3.75,
+   "charsPerSecond": 4.24
+  },
+  "welcome": {
+   "seconds": 6.61,
+   "charsPerSecond": 4.06
+  },
+  "keyboardCheck": {
+   "seconds": 6.34,
+   "charsPerSecond": 3.75
+  },
+  "bumps": {
+   "seconds": 4.73,
+   "charsPerSecond": 4.2
+  },
+  "handPlacement": {
+   "seconds": 13.3,
+   "charsPerSecond": 3.36
+  },
+  "demoTry": {
+   "seconds": 5.05,
+   "charsPerSecond": 4.34
+  },
+  "demoDone": {
+   "seconds": 4.18,
+   "charsPerSecond": 4.03
+  },
+  "modeKeys": {
+   "seconds": 5.95,
+   "charsPerSecond": 3.83
+  },
+  "modeStrip": {
+   "seconds": 7.18,
+   "charsPerSecond": 4.02
+  },
+  "modeSign": {
+   "seconds": 5.91,
+   "charsPerSecond": 4.21
+  },
+  "modeSignSpace": {
+   "seconds": 4.22,
+   "charsPerSecond": 4.24
+  },
+  "newKeys": {
+   "seconds": 6.74,
+   "charsPerSecond": 4.13
+  },
+  "help": {
+   "seconds": 6.57,
+   "charsPerSecond": 4.56
+  },
+  "errorRetry": {
+   "seconds": 3.08,
+   "charsPerSecond": 3.83
+  },
+  "errorSlow": {
+   "seconds": 2.87,
+   "charsPerSecond": 4.51
+  },
+  "errorHome": {
+   "seconds": 3.97,
+   "charsPerSecond": 3.99
+  },
+  "festivalOpen": {
+   "seconds": 7.4,
+   "charsPerSecond": 4.17
+  }
+ }
+}

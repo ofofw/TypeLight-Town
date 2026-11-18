@@ -1,0 +1,20 @@
+Light Town (点亮小镇) - third-party material in this build
+=========================================================
+
+Andika font (Latin subset, regular and bold)
+  Copyright (c) 2004-2022 SIL International
+  SIL Open Font License 1.1, full text in Andika-OFL.txt
+  Files taken unchanged from the npm package @fontsource/andika 5.3.0.
+
+React, React DOM, Scheduler (JavaScript runtime, bundled into assets/index-*.js)
+  Copyright (c) Meta Platforms, Inc. and affiliates.
+  MIT License, full text in React-MIT.txt
+
+Chinese voice lines (audio/voice/*.m4a)
+  Synthesised offline with the Kokoro-82M-v1.1-zh text-to-speech model, voice zf_001
+  (https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh, Apache License 2.0).
+  The model itself is not included in this build.
+
+Everything else in this build (building, district, partner and accessory artwork, icons,
+background music and sound effects) was created for this project from code; it contains
+no third-party images, samples or recordings.

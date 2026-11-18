@@ -1,0 +1,748 @@
+/*
+ * 第二阶段样式：复用 global.css 的设计 tokens（夜色、暖灯、奶白文字、按钮、卡片）。
+ * 只新增第二阶段页面与组件的类名，不覆盖既有公共值。
+ */
+
+/* ---------------- 练习页（第二阶段） ---------------- */
+
+.task-practice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.task-progress {
+  font-size: 15px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.task-progressbar {
+  height: 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.task-progressbar__fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #ffc94d, #ffe08a);
+  transition: width 0.25s ease;
+}
+
+.task-target {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-target__zh {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.task-target__pinyin,
+.task-target__chars {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task-target__py-cell {
+  width: 2.2em;
+  text-align: center;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  color: var(--teal);
+  line-height: 1.3;
+}
+
+.task-target__char {
+  width: 2.2em;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+/* 拼音与汉字逐字对齐：两行使用同一格宽。 */
+.task-target__zh {
+  align-items: center;
+}
+
+.task-target__en {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.task-target__latin--upper {
+  color: #ffd56b;
+  text-decoration: overline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0;
+}
+
+.task-target__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.task-target__meaning {
+  color: var(--text-muted);
+  font-size: 17px;
+}
+
+.task-input-row {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.task-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  font-size: 22px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 2px solid var(--border);
+  background: rgba(255, 255, 255, 0.96);
+  color: #1d2440;
+  outline: none;
+}
+
+.task-input:focus-visible {
+  border-color: #ffc94d;
+  box-shadow: 0 0 0 3px rgba(255, 201, 77, 0.4);
+}
+
+.task-input::placeholder {
+  color: #7d86a8;
+  font-size: 17px;
+}
+
+.task-help-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-diff {
+  border: 1px solid rgba(255, 180, 120, 0.5);
+  background: rgba(255, 170, 90, 0.1);
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task-diff__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.task-diff__chip {
+  display: inline-block;
+  min-width: 1.7em;
+  text-align: center;
+  padding: 2px 4px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.task-diff__chip--bad {
+  border-color: #ffb36b;
+  background: rgba(255, 179, 107, 0.22);
+  text-decoration: underline wavy #ffb36b 1.5px;
+  text-underline-offset: 3px;
+}
+
+.task-diff__chip--missing {
+  color: #ffd9a8;
+  border-style: dashed;
+}
+
+.task-segment {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 14px;
+  background: rgba(60, 201, 180, 0.08);
+}
+
+.task-practice__partner {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.life-scene {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.life-scene__building {
+  width: 100%;
+  height: auto;
+}
+
+.life-scene__caption {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.chip--lang {
+  font-weight: 700;
+}
+
+.chip--zh {
+  background: rgba(60, 201, 180, 0.2);
+  border: 1px solid #3cc9b4;
+  color: #a8efe2;
+}
+
+.chip--en {
+  background: rgba(255, 201, 77, 0.16);
+  border: 1px solid #ffc94d;
+  color: #ffe08a;
+}
+
+/* 三个容量格（托盘/分类格/交付位） */
+.life-props {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.life-cell {
+  flex: 1 1 30%;
+  max-width: 180px;
+  border: 1.5px dashed rgba(255, 240, 200, 0.45);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: rgba(13, 24, 56, 0.35);
+}
+
+.life-props--1 .life-cell {
+  max-width: 240px;
+  flex-basis: 80%;
+}
+
+.life-cell__slot {
+  min-height: 44px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.life-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 34px;
+  padding: 0 5px;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.life-card--zh {
+  background: #ffe9b8;
+  color: #5b4327;
+}
+
+.life-card--en {
+  background: #cfeee6;
+  color: #234b48;
+}
+
+.life-card--more {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--text-muted);
+}
+
+.life-cell__num {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+[data-motion='reduced'] .life-card--pop {
+  animation: none;
+}
+
+.life-card--pop {
+  animation: life-pop 0.3s ease-out both;
+}
+
+@keyframes life-pop {
+  from {
+    transform: scale(0.6);
+    opacity: 0.2;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.life-effect {
+  width: min(320px, 100%);
+  height: auto;
+}
+
+.life-effect--preview {
+  opacity: 0.9;
+}
+
+.task-intro-steps {
+  padding-left: 22px;
+  display: grid;
+  gap: 4px;
+}
+
+/* ---------------- 居民任务首页与路线页 ---------------- */
+
+.residents__routes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.residents__route-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.residents__route-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.residents__route-head h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.residents__count {
+  margin-left: auto;
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+.residents__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.residents__extras {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.residents__footer {
+  margin-top: 8px;
+  display: grid;
+  gap: 8px;
+}
+
+.residents__notes summary {
+  cursor: pointer;
+  color: var(--teal);
+}
+
+.residents-route__intro {
+  margin-bottom: 16px;
+}
+
+.residents-route__step {
+  margin-top: 20px;
+}
+
+.residents-route__step-title {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #ffe08a;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.task-card {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.task-card--next {
+  border-color: #ffc94d;
+  box-shadow: 0 0 0 1px rgba(255, 201, 77, 0.45);
+}
+
+.task-card--done {
+  opacity: 0.92;
+}
+
+.task-card--locked {
+  opacity: 0.72;
+}
+
+.task-card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-card__seq {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 15px;
+}
+
+.task-card__names {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.task-card__title {
+  font-weight: 700;
+}
+
+.task-card__building {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.task-card__head .badge {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.task-card__body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-card__targets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.task-card__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-peek__focus {
+  margin: 8px 0 4px;
+}
+
+.task-peek__review {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* ---------------- 任务预览 / 结果 / 专项 ---------------- */
+
+.task-preview__card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-preview__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-preview__building {
+  color: var(--text-muted);
+}
+
+.task-preview__targets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.task-preview__reward {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.task-preview__effect {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.drills__intro {
+  margin-bottom: 16px;
+}
+
+.drills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.drill-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.drill-card h2 {
+  font-size: 19px;
+  margin: 0;
+}
+
+.drill-card__count {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.drill-card--locked {
+  opacity: 0.78;
+}
+
+.drill-card .btn {
+  align-self: flex-start;
+}
+
+/* ---------------- 家长页·第二阶段 ---------------- */
+
+.parent__p2 h3 {
+  margin-top: 18px;
+  font-size: 17px;
+}
+
+.parent__p2 .table-scroll .data-table {
+  min-width: 720px;
+}
+
+/* ---------------- 首页入口 ---------------- */
+
+.home__residents {
+  margin-top: 12px;
+}
+
+/* ---------------- 视口适配 ---------------- */
+
+@media (max-width: 900px) {
+  .task-input-row {
+    flex-direction: column;
+  }
+
+  .task-target__char {
+    font-size: 36px;
+  }
+
+  .task-target__en {
+    font-size: 28px;
+  }
+}
+
+/* 减少动画：关闭进度与卡片动画 */
+[data-motion='reduced'] .task-progressbar__fill {
+  transition: none;
+}
+
+[data-motion='reduced'] .life-card--pop {
+  animation: none;
+}
+
+/* ---------------- 激励与长期目标（2026-11-17） ---------------- */
+
+.residents__daily {
+  margin-bottom: 16px;
+}
+
+.residents__daily p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
+
+.residents__album {
+  margin-top: 16px;
+}
+
+.goal-card {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+
+.goal-card h2 {
+  margin: 0;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.goal-card__bar {
+  position: relative;
+  width: 100%;
+  min-height: 30px;
+  border-radius: 999px;
+  background: rgba(13, 24, 56, 0.6);
+  border: 1px solid rgba(255, 224, 138, 0.4);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.goal-card__fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffd56b, #ffb84d);
+  transition: width 0.4s ease;
+}
+
+.goal-card__count {
+  position: absolute;
+  inset-inline-start: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.goal-card__hint,
+.goal-card__ready {
+  margin: 0;
+  font-size: 18px;
+}
+
+.goal-card__ready {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.building-chip__resident {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffe08a;
+  background: rgba(185, 121, 31, 0.35);
+}
+
+.album__overview {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  margin-bottom: 16px;
+}
+
+.album__overview h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.album__group {
+  margin-bottom: 14px;
+}
+
+.album__group-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.album__group-head h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #ffe08a;
+}
+
+.album__chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.album__chip--learned,
+.album__chip--unknown {
+  font-size: 18px;
+  padding: 4px 10px;
+}
+
+.album__chip--unknown {
+  opacity: 0.55;
+}
+
+[data-motion='reduced'] .goal-card__fill {
+  transition: none;
+}

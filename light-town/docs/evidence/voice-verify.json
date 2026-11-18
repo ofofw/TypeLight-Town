@@ -1,0 +1,104 @@
+{
+ "choosePartner": {
+  "text": "选一个小伙伴，陪你一起点亮小镇吧。",
+  "heard": "选一个小伙伴陪你一起点亮小镇吧",
+  "syllableError": 0.0,
+  "seconds": 3.75
+ },
+ "welcome": {
+  "text": "欢迎来到点亮小镇！我们一起用键盘，把小镇的灯一盏一盏点亮。",
+  "heard": "欢迎来到点亮小镇,我们一起用键盘,把小镇的灯一盏一盏点亮。",
+  "syllableError": 0.0,
+  "seconds": 6.61
+ },
+ "keyboardCheck": {
+  "text": "请先接好实体键盘。用平板电脑的话，要连上外接键盘哦。",
+  "heard": "请先接好实体键盘用平板电脑的话要连上外接键盘哦",
+  "syllableError": 0.0,
+  "seconds": 6.34
+ },
+ "bumps": {
+  "text": "摸一摸键盘中间，有两个键上面有小小的凸起。",
+  "heard": "摸一摸键盘中间有两个键上面有小小的凸起",
+  "syllableError": 0.0,
+  "seconds": 4.73
+ },
+ "handPlacement": {
+  "text": "左手食指放在左边有凸起的键上，右手食指放在右边有凸起的键上，其他手指轻轻排好，拇指放在空格键上。",
+  "heard": "左手食指放在左边有凸起的肩上右手食指放在右边有凸起的肩上其他手指轻轻排好拇指放在空格肩上",
+  "syllableError": 0.0,
+  "seconds": 13.3
+ },
+ "demoTry": {
+  "text": "现在轮流按这两个键，一共按四次，点亮第一扇窗吧！",
+  "heard": "现在轮流按这两个键一共按四次点亮第一扇窗吧",
+  "syllableError": 0.0,
+  "seconds": 5.05
+ },
+ "demoDone": {
+  "text": "第一扇窗亮起来啦！我们去小镇看看吧。",
+  "heard": "第一扇窗亮起来了,我们去小镇看看吧。",
+  "syllableError": 0.062,
+  "seconds": 4.18
+ },
+ "modeKeys": {
+  "text": "看到哪个字母，就按哪个键。按对了，窗户就会多一点光。",
+  "heard": "看到哪个字母,就按哪个键,按对了窗户就会多一点光。",
+  "syllableError": 0.0,
+  "seconds": 5.95
+ },
+ "modeStrip": {
+  "text": "三个字母是一组，从左往右一个一个按。每完成一组，就连起一段灯带。",
+  "heard": "三个字母是一组从左往右一个一个按每完成一组就连起一段等待",
+  "syllableError": 0.0,
+  "seconds": 7.18
+ },
+ "modeSign": {
+  "text": "一个字母一个字母地拼出单词。拼完一个词，招牌就亮一块。",
+  "heard": "一个字母一个字母的拼出单词拼完一个词招牌就亮一块",
+  "syllableError": 0.042,
+  "seconds": 5.91
+ },
+ "modeSignSpace": {
+  "text": "看到空格的符号时，用拇指按一下空格键。",
+  "heard": "看到空格的符号时用拇指按一下空格键",
+  "syllableError": 0.0,
+  "seconds": 4.22
+ },
+ "newKeys": {
+  "text": "新的按键来啦！先看看它们在键盘上的位置，再用提示的手指去按。",
+  "heard": "新的按键来了,先看看它们在键盘上的位置,再用提示的手指去按。",
+  "syllableError": 0.037,
+  "seconds": 6.74
+ },
+ "help": {
+  "text": "看看键盘上亮起来的那个键，用提示的手指按下去，按完回到小凸起上。",
+  "heard": "看看键盘上亮起来的那个键,用提示的手指按下去,按完回到小凸起上。",
+  "syllableError": 0.0,
+  "seconds": 6.57
+ },
+ "errorRetry": {
+  "text": "没关系，看看提示，再试一次。",
+  "heard": "没关系看看提示 再试一次",
+  "syllableError": 0.0,
+  "seconds": 3.08
+ },
+ "errorSlow": {
+  "text": "慢慢来，找到亮起来的那个键。",
+  "heard": "慢慢来找到亮起来的那个键",
+  "syllableError": 0.0,
+  "seconds": 2.87
+ },
+ "errorHome": {
+  "text": "别着急，手指回到小凸起上，再找一找。",
+  "heard": "别着急手指回到小突起上,再找一找。",
+  "syllableError": 0.0,
+  "seconds": 3.97
+ },
+ "festivalOpen": {
+  "text": "灯光节开始啦！可以复习容易按错的键，自由练习，还能换上新的灯光颜色。",
+  "heard": "灯光节开始了,可以复习容易按错的键,自由练习,还能换上新的灯光颜色。",
+  "syllableError": 0.033,
+  "seconds": 7.4
+ }
+}

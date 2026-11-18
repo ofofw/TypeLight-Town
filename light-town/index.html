@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <script id="source-file-entry">
+      if (location.protocol === 'file:') location.replace(new URL('./dist/index.html', location.href).href);
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0D1838" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="点亮小镇：给孩子的中文打字小游戏，用键盘一盏一盏点亮小镇的灯。" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="点亮小镇" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>点亮小镇</title>
+  </head>
+  <body>
+    <div id="root">
+      <div id="boot" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 24px; box-sizing: border-box; background: #0d1838; color: #f7f2e6; font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif; text-align: center">
+        <p style="margin: 0; font-size: 2rem; font-weight: 700">点亮小镇</p>
+        <p id="boot-message" style="margin: 0; font-size: 1.25rem">正在点亮……</p>
+        <button id="boot-retry" type="button" hidden style="min-height: 52px; padding: 0 28px; border: 0; border-radius: 14px; background: #ffc94a; color: #1b1b2f; font: inherit; font-size: 1.25rem; font-weight: 700; cursor: pointer">重新加载</button>
+      </div>
+    </div>
+    <noscript>点亮小镇需要开启 JavaScript 才能运行。</noscript>
+    <script>
+      (function () {
+        function failed() {
+          if (!document.getElementById('boot')) return;
+          document.getElementById('boot-message').textContent = '游戏没有加载成功。请检查网络连接，然后点“重新加载”。';
+          var retry = document.getElementById('boot-retry');
+          retry.hidden = false;
+          retry.onclick = function () {
+            location.reload();
+          };
+        }
+        window.addEventListener(
+          'error',
+          function (e) {
+            var el = e.target;
+            if (el && (el.tagName === 'SCRIPT' || (el.tagName === 'LINK' && /stylesheet|modulepreload/.test(el.rel)))) failed();
+          },
+          true,
+        );
+        setTimeout(failed, 15000);
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
