@@ -26,7 +26,7 @@ function WindowLight({ lit, reducedMotion }: { lit: boolean; reducedMotion?: boo
   useFrame(() => {
     const m = mat.current;
     if (!m) return;
-    const target = lit ? 1.7 : 0;
+    const target = lit ? 2.3 : 0;
     m.emissiveIntensity += (target - m.emissiveIntensity) * (reducedMotion ? 1 : 0.14);
   });
   return (
@@ -34,7 +34,7 @@ function WindowLight({ lit, reducedMotion }: { lit: boolean; reducedMotion?: boo
       {/* 窗框 */}
       <mesh position={[0, 0, -0.02]}>
         <boxGeometry args={[0.52, 0.62, 0.05]} />
-        <meshStandardMaterial color={UNLIT.windowFrame} roughness={0.9} />
+        <meshStandardMaterial color="#8FA3DC" roughness={0.9} />
       </mesh>
       {/* 窗体（可点亮） */}
       <mesh>
@@ -55,9 +55,13 @@ interface VariantSpec {
   body: [number, number, number];
   windows: { x: number; y: number }[];
   doorWidth: number;
+  /** 暖灯巷配色的主体/屋顶/点缀色（取自 DISTRICT_GROUND[0] 与 accent）。 */
+  bodyColor: string;
+  roofColor: string;
+  accentColor: string;
 }
 
-/** 每个变体：主体尺寸 + 6 扇窗在前脸的位置（相对主体中心）。 */
+/** 每个变体：主体尺寸 + 6 扇窗在前脸的位置（相对主体中心）+ 配色。 */
 const VARIANTS: Record<GreyboxVariant, VariantSpec> = {
   'lamp-house': {
     body: [2.4, 2.0, 2.2],
@@ -66,6 +70,9 @@ const VARIANTS: Record<GreyboxVariant, VariantSpec> = {
       { x: -0.62, y: -0.42 }, { x: 0.62, y: -0.42 }, { x: 0, y: -0.42 },
     ],
     doorWidth: 0,
+    bodyColor: '#6E5A80',
+    roofColor: '#B0705E',
+    accentColor: '#C97B5A',
   },
   bakery: {
     body: [2.9, 1.7, 2.4],
@@ -74,6 +81,9 @@ const VARIANTS: Record<GreyboxVariant, VariantSpec> = {
       { x: -0.9, y: -0.4 }, { x: 0.9, y: -0.4 }, { x: 0.45, y: -0.4 },
     ],
     doorWidth: 0.66,
+    bodyColor: '#75628A',
+    roofColor: '#5E4A75',
+    accentColor: '#C97B5A',
   },
   'post-office': {
     body: [2.2, 3.0, 2.2],
@@ -82,6 +92,9 @@ const VARIANTS: Record<GreyboxVariant, VariantSpec> = {
       { x: -0.55, y: 0.05 }, { x: 0.55, y: 0.05 }, { x: 0, y: 0.05 },
     ],
     doorWidth: 0.7,
+    bodyColor: '#68597E',
+    roofColor: '#5E4A75',
+    accentColor: '#3CC9B4',
   },
 };
 
@@ -106,24 +119,35 @@ export function GreyboxBuilding({ variant, stage, highlighted, reducedMotion, po
       <mesh position={[0, h / 2, 0]}>
         <boxGeometry args={[w, h, d]} />
         <meshStandardMaterial
-          color={highlighted ? UNLIT.edge : UNLIT.top}
+          color={highlighted ? '#93A6DC' : spec.bodyColor}
           emissive={highlighted ? '#3E539A' : '#000000'}
-          emissiveIntensity={highlighted ? 0.3 : 0}
+          emissiveIntensity={highlighted ? 0.35 : 0}
           roughness={0.95}
         />
       </mesh>
+
+      {/* 窗光外洒：点亮的窗越多，门前越亮（对应 2D 版的 spill）。 */}
+      {stage > 0 && (
+        <pointLight
+          position={[0, h * 0.55, d / 2 + 1.3]}
+          color={WARM.glow}
+          intensity={stage * 1.6}
+          distance={6.5}
+          decay={2}
+        />
+      )}
 
       {/* 变体屋顶 */}
       {variant === 'lamp-house' && (
         <>
           <mesh position={[0, h + 0.62, 0]} rotation-y={Math.PI / 4}>
             <coneGeometry args={[w * 0.82, 1.25, 4]} />
-            <meshStandardMaterial color={UNLIT.left} roughness={0.95} flatShading />
+            <meshStandardMaterial color={spec.roofColor} roughness={0.95} flatShading />
           </mesh>
           {/* 烟囱 */}
           <mesh position={[w * 0.28, h + 0.95, d * 0.2]}>
             <boxGeometry args={[0.34, 0.9, 0.34]} />
-            <meshStandardMaterial color={UNLIT.right} roughness={0.95} />
+            <meshStandardMaterial color="#53436A" roughness={0.95} />
           </mesh>
         </>
       )}
@@ -132,12 +156,12 @@ export function GreyboxBuilding({ variant, stage, highlighted, reducedMotion, po
           {/* 平顶出檐 */}
           <mesh position={[0, h + 0.09, 0]}>
             <boxGeometry args={[w + 0.35, 0.18, d + 0.35]} />
-            <meshStandardMaterial color={UNLIT.left} roughness={0.95} />
+            <meshStandardMaterial color={spec.roofColor} roughness={0.95} />
           </mesh>
           {/* 雨棚 */}
           <mesh position={[0, h * 0.62, d / 2 + 0.32]} rotation-x={-0.5}>
             <boxGeometry args={[1.7, 0.07, 0.75]} />
-            <meshStandardMaterial color="#8A5A50" roughness={0.9} />
+            <meshStandardMaterial color={spec.accentColor} roughness={0.9} />
           </mesh>
         </>
       )}
@@ -145,7 +169,7 @@ export function GreyboxBuilding({ variant, stage, highlighted, reducedMotion, po
         <>
           <mesh position={[0, h + 0.08, 0]}>
             <boxGeometry args={[w + 0.25, 0.16, d + 0.25]} />
-            <meshStandardMaterial color={UNLIT.left} roughness={0.95} />
+            <meshStandardMaterial color={spec.roofColor} roughness={0.95} />
           </mesh>
           {/* 旗杆与信箱旗 */}
           <mesh position={[w * 0.38, h + 0.75, d * 0.3]}>
@@ -154,7 +178,7 @@ export function GreyboxBuilding({ variant, stage, highlighted, reducedMotion, po
           </mesh>
           <mesh position={[w * 0.38 + 0.18, h + 1.25, d * 0.3]}>
             <boxGeometry args={[0.34, 0.22, 0.03]} />
-            <meshStandardMaterial color="#B0705E" roughness={0.8} />
+            <meshStandardMaterial color={spec.accentColor} roughness={0.8} />
           </mesh>
         </>
       )}
@@ -163,13 +187,13 @@ export function GreyboxBuilding({ variant, stage, highlighted, reducedMotion, po
       {spec.doorWidth > 0 && (
         <mesh position={[-w * 0.18, spec.doorWidth / 2 + 0.05, d / 2 + 0.03]}>
           <boxGeometry args={[spec.doorWidth, 1.0, 0.06]} />
-          <meshStandardMaterial color="#241A33" roughness={0.9} />
+          <meshStandardMaterial color="#4A3560" roughness={0.9} />
         </mesh>
       )}
       {variant === 'lamp-house' && (
         <mesh position={[0, 0.5, d / 2 + 0.03]}>
           <boxGeometry args={[0.56, 1.0, 0.06]} />
-          <meshStandardMaterial color="#241A33" roughness={0.9} />
+          <meshStandardMaterial color="#4A3560" roughness={0.9} />
         </mesh>
       )}
 
