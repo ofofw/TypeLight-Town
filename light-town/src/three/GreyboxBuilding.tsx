@@ -46,7 +46,7 @@ function useGlow(lit: boolean, reducedMotion: boolean | undefined, peak: number)
 
 /** 圆舷窗：圆片 + 圆环框，最童话的窗型。 */
 function PortholeWindow({ lit, reducedMotion }: { lit: boolean; reducedMotion?: boolean }) {
-  const mat = useGlow(lit, reducedMotion, 2.4);
+  const mat = useGlow(lit, reducedMotion, 3.0);
   return (
     <group>
       <mesh position={[0, 0, -0.015]}>
@@ -63,7 +63,7 @@ function PortholeWindow({ lit, reducedMotion }: { lit: boolean; reducedMotion?: 
 
 /** 拱形窗：方身 + 半圆顶。 */
 function ArchedWindow({ lit, reducedMotion }: { lit: boolean; reducedMotion?: boolean }) {
-  const mat = useGlow(lit, reducedMotion, 2.4);
+  const mat = useGlow(lit, reducedMotion, 3.0);
   return (
     <group>
       <mesh position={[0, 0.22, -0.015]}>
@@ -84,7 +84,7 @@ function ArchedWindow({ lit, reducedMotion }: { lit: boolean; reducedMotion?: bo
 
 /** 方窗：邮局 annex 用，带横竖窗棂。 */
 function SquareWindow({ lit, reducedMotion }: { lit: boolean; reducedMotion?: boolean }) {
-  const mat = useGlow(lit, reducedMotion, 2.4);
+  const mat = useGlow(lit, reducedMotion, 3.0);
   return (
     <group>
       <mesh position={[0, 0, -0.015]}>
@@ -396,8 +396,8 @@ export function GreyboxBuilding({ variant, stage, highlighted, reducedMotion, po
         <pointLight
           position={[0, 1.2, 2.2]}
           color={WARM.glow}
-          intensity={stage * 1.8}
-          distance={7}
+          intensity={stage * 2.4}
+          distance={8}
           decay={2}
         />
       )}

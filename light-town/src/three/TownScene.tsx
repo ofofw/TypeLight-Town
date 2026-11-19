@@ -54,7 +54,7 @@ function CandyLamp({ position }: { position: [number, number, number] }) {
       ))}
       <mesh position={[0, 2.62, 0]}>
         <sphereGeometry args={[0.24, 16, 16]} />
-        <meshStandardMaterial color={WARM.light} emissive={WARM.light} emissiveIntensity={2.6} />
+        <meshStandardMaterial color={WARM.light} emissive={WARM.light} emissiveIntensity={1.6} />
       </mesh>
       <mesh position={[0, 2.88, 0]}>
         <coneGeometry args={[0.3, 0.24, 10]} />
@@ -64,7 +64,7 @@ function CandyLamp({ position }: { position: [number, number, number] }) {
         <torusGeometry args={[0.22, 0.04, 8, 20]} />
         <meshStandardMaterial color={CANDY.butter} roughness={0.7} />
       </mesh>
-      <pointLight position={[0, 2.6, 0]} color={WARM.light} intensity={7} distance={8.5} decay={2} />
+      <pointLight position={[0, 2.6, 0]} color={WARM.light} intensity={2.6} distance={5.5} decay={2} />
     </group>
   );
 }
