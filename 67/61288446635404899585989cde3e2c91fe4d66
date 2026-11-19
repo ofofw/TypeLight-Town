@@ -1,0 +1,16 @@
+light-town/src/three/GreyboxBuilding.tsx
+  h_b338d6974a9c39 49,66,87,399-400
+light-town/src/three/TownScene.tsx
+  h_b338d6974a9c39 57,67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6761288446635404899585989cde3e2c91fe4d66",
+  "prompts": {},
+  "humans": {
+    "h_b338d6974a9c39": {
+      "author": "000522 <wangmin@fcbox.com>"
+    }
+  }
+}
