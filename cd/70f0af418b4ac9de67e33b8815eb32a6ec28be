@@ -1,0 +1,22 @@
+light-town/scripts/loop-town3d.mjs
+  h_b338d6974a9c39 1-108
+light-town/src/styles/global.css
+  h_b338d6974a9c39 1361-1390
+light-town/src/ui/pages/PracticePage.tsx
+  h_b338d6974a9c39 235
+light-town/src/ui/pages/TownPage.tsx
+  h_b338d6974a9c39 7,33,39-41,73-90,93-94,125,136,280,342
+spec/changes/2026-11-20-3d-town.md
+  h_b338d6974a9c39 1-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cd70f0af418b4ac9de67e33b8815eb32a6ec28be",
+  "prompts": {},
+  "humans": {
+    "h_b338d6974a9c39": {
+      "author": "000522 <wangmin@fcbox.com>"
+    }
+  }
+}
