@@ -2,16 +2,16 @@
   "format": "lighttown.profiles-backup",
   "formatVersion": 1,
   "appSaveVersion": 3,
-  "exportedAt": "2026-11-17T01:34:15.271Z",
+  "exportedAt": "2026-11-20T03:50:14.564Z",
   "profiles": [
     {
-      "profileId": "7367fb7c56c6a6f93c14ac02e38bc5cb",
+      "profileId": "82663b3bdbb096fe1187bda1b8c1f349",
       "name": "玩家一",
       "game": {
         "schemaVersion": 2,
         "revision": 9,
-        "createdAt": 1794879253489,
-        "updatedAt": 1794879255006,
+        "createdAt": 1795146612019,
+        "updatedAt": 1795146614067,
         "partner": "nuannuan",
         "onboarded": true,
         "buildings": [
@@ -67,13 +67,13 @@
           "round": null
         },
         "session": {
-          "id": "Smwk0rkac",
-          "startedAt": 1794879254388,
-          "lastActivityAt": 1794879254583,
+          "id": "Smwofxzun",
+          "startedAt": 1795146613439,
+          "lastActivityAt": 1795146613637,
           "levelsCompleted": 0,
           "attempts": 3,
           "correct": 3,
-          "effectiveMs": 117,
+          "effectiveMs": 133,
           "coins": 0,
           "buildingsAtStart": [
             0,
@@ -94,7 +94,7 @@
         "activeTask": {
           "variant": "phase1",
           "level": {
-            "id": "L1-2axove",
+            "id": "L1-g3fbds",
             "seq": 1,
             "entry": "light",
             "mode": "keys",
@@ -108,22 +108,11 @@
             "standard": true,
             "buildingTarget": 0,
             "replayBuilding": null,
-            "seed": 139300394,
+            "seed": 973212256,
             "targets": [
-              "j",
-              "j",
               "f",
               "j",
               "j",
-              "f",
-              "j",
-              "f",
-              "j",
-              "j",
-              "f",
-              "j",
-              "j",
-              "f",
               "f",
               "j",
               "f",
@@ -133,6 +122,17 @@
               "f",
               "j",
               "f",
+              "j",
+              "f",
+              "f",
+              "j",
+              "j",
+              "f",
+              "j",
+              "j",
+              "f",
+              "j",
+              "j",
               "f"
             ],
             "words": null,
@@ -141,26 +141,26 @@
             "attempts": 3,
             "correct": 3,
             "wrongStreak": 0,
-            "effectiveMs": 117,
-            "createdAt": 1794879254388,
+            "effectiveMs": 133,
+            "createdAt": 1795146613439,
             "paused": true,
             "activeSince": null,
-            "lastInputAt": 1794879254583,
+            "lastInputAt": 1795146613637,
             "accountedUntil": null,
-            "targetShownAt": 1794879254583,
+            "targetShownAt": 1795146613637,
             "festival": null,
             "newKeyQuota": {
               "f": 6,
               "j": 6
             },
             "keyCounts": {
-              "j": {
-                "a": 2,
-                "c": 2
-              },
               "f": {
                 "a": 1,
                 "c": 1
+              },
+              "j": {
+                "a": 2,
+                "c": 2
               }
             }
           }
@@ -170,40 +170,40 @@
         "stats": {
           "attempts": 3,
           "correct": 3,
-          "effectiveMs": 117,
+          "effectiveMs": 133,
           "levelsCompleted": 0,
           "recent": [
             [
-              "j",
-              1
-            ],
-            [
-              "j",
-              1
-            ],
-            [
               "f",
+              1
+            ],
+            [
+              "j",
+              1
+            ],
+            [
+              "j",
               1
             ]
           ],
           "keys": {
-            "j": {
-              "attempts": 2,
-              "correct": 2,
-              "presented": 3
-            },
             "f": {
               "attempts": 1,
               "correct": 1,
-              "presented": 1
+              "presented": 2
+            },
+            "j": {
+              "attempts": 2,
+              "correct": 2,
+              "presented": 2
             }
           },
           "mistypes": {},
           "daily": {
-            "2026-11-17": {
+            "2026-11-20": {
               "attempts": 3,
               "correct": 3,
-              "effectiveMs": 117,
+              "effectiveMs": 133,
               "levels": 0
             }
           },
@@ -218,7 +218,7 @@
         "phase2": {
           "contentVersion": "phase2-content-2",
           "storyDone": [],
-          "maxObservedAt": 1794879255005,
+          "maxObservedAt": 1795146614067,
           "taskSeq": 0,
           "exposed": {},
           "learned": {},
@@ -305,13 +305,13 @@
       }
     },
     {
-      "profileId": "27ea07b86582a1656ca9a8a4d418854c",
+      "profileId": "2b1eb4548c01e7dcc770720e2e141782",
       "name": "玩家二",
       "game": {
         "schemaVersion": 2,
         "revision": 3,
-        "createdAt": 1794879253684,
-        "updatedAt": 1794879254914,
+        "createdAt": 1795146612257,
+        "updatedAt": 1795146614018,
         "partner": "nuannuan",
         "onboarded": false,
         "buildings": [
@@ -385,7 +385,7 @@
         "phase2": {
           "contentVersion": "phase2-content-2",
           "storyDone": [],
-          "maxObservedAt": 1794879254713,
+          "maxObservedAt": 1795146613783,
           "taskSeq": 0,
           "exposed": {},
           "learned": {},
