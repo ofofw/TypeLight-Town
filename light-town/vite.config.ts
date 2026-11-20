@@ -7,7 +7,7 @@ export default defineConfig({
   // The iPad opens the Mac by its Bonjour name (http://<name>.local:4173/); Vite answers only localhost and IPs unless told.
   server: { port: 5173, strictPort: true, allowedHosts: ['.local'] },
   preview: { port: 4173, strictPort: true, allowedHosts: ['.local'] },
-  build: { outDir: 'dist', assetsInlineLimit: 100000, chunkSizeWarningLimit: 800, rolldownOptions: { output: { format: 'iife' } } },
+  build: { outDir: 'dist', assetsInlineLimit: 100000, chunkSizeWarningLimit: 800 },
   test: {
     include: ['tests/unit/**/*.test.ts'],
     environment: 'node',

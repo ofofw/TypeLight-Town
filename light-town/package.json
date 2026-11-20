@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite",
     "dev:lan": "vite --host",
-    "build": "tsc --noEmit -p tsconfig.json && vite build && node scripts/standalone.mjs",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
     "preview": "vite preview",
     "preview:lan": "vite preview --host",
     "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.e2e.json",

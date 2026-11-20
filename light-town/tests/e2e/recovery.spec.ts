@@ -93,14 +93,17 @@ test.describe('save recovery and storage problems (D03–D06)', () => {
   });
 });
 
-test('the embedded game script is missing: a message and reload button instead of a blank page (E09)', async ({ page }) => {
+test('the game script fails to load: a message and reload button instead of a blank page (E09)', async ({ page }) => {
   let block = true;
   await page.route('**/*', async (route) => {
+    const url = route.request().url();
+    if (block && /\.js(\?|$)/.test(url)) {
+      await route.fulfill({ status: 404, body: '// blocked', contentType: 'application/javascript' });
+      return;
+    }
     if (!block || route.request().resourceType() !== 'document') return route.continue();
     const response = await route.fetch();
-    const html = (await response.text())
-      .replace(/<script id="game-app">[\s\S]*?<\/script>/, '')
-      .replace('setTimeout(failed, 15000)', 'setTimeout(failed, 0)');
+    const html = (await response.text()).replace('setTimeout(failed, 15000)', 'setTimeout(failed, 0)');
     await route.fulfill({ response, body: html });
   });
   await page.goto('./');
