@@ -1358,6 +1358,36 @@ noscript p {
   pointer-events: auto;
 }
 
+/* 去练习的过渡：运镜推进时画面淡出，练习页淡入（reduce-motion 不加类直切） */
+.town3d__fade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #0D1838;
+  border-radius: inherit;
+  animation: town3d-fade 0.48s ease-out forwards;
+}
+
+@keyframes town3d-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.page--fadein {
+  animation: page-fadein 0.3s ease-out;
+}
+
+@keyframes page-fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page--fadein {
+    animation: none;
+  }
+}
+
 .district {
   flex: 0 0 100%;
   min-width: 0;

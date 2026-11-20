@@ -4,6 +4,7 @@ import { PartnerArt } from '../../art/partners';
 import { BUILDINGS, BUILDING_COUNT, BUILDINGS_PER_DISTRICT, DISTRICTS, STAGES_PER_BUILDING, districtOfBuilding } from '../../config/buildings';
 import { partnerById } from '../../config/shop';
 import { allBuildingsDone, p1Level, remainingBuildings } from '../../core/game';
+import type { StartRequest } from '../../core/game';
 import { residentBuildings } from '../../core/phase2/story';
 import { CoinBadge, SoundButton } from '../components/Chrome';
 import { Icon } from '../components/Icon';
@@ -29,11 +30,15 @@ export function TownPage({ district }: { district?: number }) {
   const [slotFocus, setSlotFocus] = useState<number | null>(() => currentSlot(save, district ?? focusDistrict(save)));
   const [highlighted, setHighlighted] = useState<number | null>(null);
   const [ctxLost, setCtxLost] = useState(false);
+  const [fading, setFading] = useState(false);
   const use3d = webglSupported() && !ctxLost;
   const { begin, dialog, error } = useStarter();
   const scroller = useRef<HTMLDivElement>(null);
   const indexRef = useRef(index);
   indexRef.current = index;
+  const fadeTimer = useRef<number | null>(null);
+
+  useEffect(() => () => { if (fadeTimer.current) window.clearTimeout(fadeTimer.current); }, []);
 
   useEffect(() => {
     const el = scroller.current;
@@ -65,11 +70,28 @@ export function TownPage({ district }: { district?: number }) {
     }
   };
 
+  /** 点建筑去练习：3D 下先运镜推进 + 画面淡出再切页，压住 3D↔2D 画风跳变（reduce-motion / 2D 直切）。 */
+  const goPractice = (b: number, req: StartRequest) => {
+    if (!use3d || !animate) {
+      begin(req);
+      return;
+    }
+    setIndex(districtOfBuilding(b));
+    setSlotFocus(b % BUILDINGS_PER_DISTRICT);
+    setHighlighted(b);
+    setFading(true);
+    fadeTimer.current = window.setTimeout(() => {
+      fadeTimer.current = null;
+      begin(req);
+      // begin 若弹出「继续上次」对话框而非切页，把淡出撤掉让小镇可见。
+      setFading(false);
+    }, 520);
+  };
+
   /** 3D 场景里点选建筑：与焦点层卡片同一套入口（controller 零改动）。 */
   const pickBuilding = (b: number) => {
-    setIndex(districtOfBuilding(b));
-    if (b < save.currentBuilding) begin({ entry: 'replay', building: b });
-    else if (b === save.currentBuilding) begin({ entry: 'light' });
+    if (b < save.currentBuilding) goPractice(b, { entry: 'replay', building: b });
+    else if (b === save.currentBuilding) goPractice(b, { entry: 'light' });
   };
 
   const done = allBuildingsDone(save);
@@ -100,7 +122,7 @@ export function TownPage({ district }: { district?: number }) {
     const onBlur = () => setHighlighted((h) => (h === b ? null : h));
     if (b < current) {
       return (
-        <button key={b} type="button" className="building-chip building-chip--done" style={style} onFocus={onFocus} onBlur={onBlur} onClick={() => begin({ entry: 'replay', building: b })}>
+        <button key={b} type="button" className="building-chip building-chip--done" style={style} onFocus={onFocus} onBlur={onBlur} onClick={() => goPractice(b, { entry: 'replay', building: b })}>
           {name}
           <span className="building-chip__state">
             <Icon name="check" size={16} />
@@ -111,7 +133,7 @@ export function TownPage({ district }: { district?: number }) {
     }
     if (b === current) {
       return (
-        <button key={b} type="button" className="building-chip building-chip--current" style={style} onFocus={onFocus} onBlur={onBlur} onClick={() => begin({ entry: 'light' })}>
+        <button key={b} type="button" className="building-chip building-chip--current" style={style} onFocus={onFocus} onBlur={onBlur} onClick={() => goPractice(b, { entry: 'light' })}>
           {name}
           <span className="building-chip__state">
             {stageProgressText(stage)} · 继续点亮
@@ -255,6 +277,7 @@ export function TownPage({ district }: { district?: number }) {
               <div className="town3d__chips" aria-label={`${DISTRICTS[index].name}建筑`}>
                 {BUILDINGS.slice(index * BUILDINGS_PER_DISTRICT, (index + 1) * BUILDINGS_PER_DISTRICT).map((b) => chipNode(b.index))}
               </div>
+              {fading && <div className="town3d__fade" aria-hidden="true" />}
             </div>
           ) : (
             <div className="district-scroller" ref={scroller} onScroll={onScroll}>
@@ -316,7 +339,7 @@ export function TownPage({ district }: { district?: number }) {
               <p>
                 下一个目标：第 {save.buildings[current] + 1} 盏灯。每完成一关点亮 1 盏，点亮 {STAGES_PER_BUILDING} 盏后这座建筑就完成了。
               </p>
-              <button type="button" className="btn btn--primary btn--large btn--block" onClick={() => begin({ entry: 'light' })}>
+              <button type="button" className="btn btn--primary btn--large btn--block" onClick={() => goPractice(current, { entry: 'light' })}>
                 <Icon name="star" size={24} />
                 继续点亮
               </button>

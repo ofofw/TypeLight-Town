@@ -232,7 +232,7 @@ function PracticeSession({ level, save, autoStart }: { level: LevelState; save: 
   const building = level.entry === 'light' ? level.buildingTarget : level.replayBuilding;
 
   return (
-    <div className="page practice" ref={rootRef} tabIndex={-1}>
+    <div className={`page practice${animate ? ' page--fadein' : ''}`} ref={rootRef} tabIndex={-1}>
       <header className="topbar topbar--practice">
         <h1 className="topbar__title">{levelHeading(level)}</h1>
         <div className="topbar__actions">
