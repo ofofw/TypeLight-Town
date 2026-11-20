@@ -1,0 +1,18 @@
+light-town/docs/evidence/3d/autoresearch-fps-dashboard.html
+  h_b338d6974a9c39 1-114
+light-town/docs/evidence/3d/autoresearch-size-dashboard.html
+  h_b338d6974a9c39 1-106
+light-town/scripts/perf-orbit.mjs
+  h_b338d6974a9c39 1-102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c5b4ce7f27f1d3852a2ead1976d4fed89405f1a2",
+  "prompts": {},
+  "humans": {
+    "h_b338d6974a9c39": {
+      "author": "000522 <wangmin@fcbox.com>"
+    }
+  }
+}
