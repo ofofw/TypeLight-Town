@@ -9,9 +9,7 @@
 
 ## 想玩
 
-直接双击本目录的 `index.html` 即可在电脑浏览器中游玩，无需安装 Node.js。也可以打开 `light-town/dist/index.html`。
-
-以下是使用本地网页服务的可选方式：
+游戏通过本地网页服务运行（2026-11-20 起不再支持双击文件直接打开）。
 
 需要 Node.js 22.12 或更高版本（[nodejs.org](https://nodejs.org/) 下载 LTS 版）。
 
