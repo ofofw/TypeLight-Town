@@ -26,6 +26,23 @@ export interface TownSceneProps {
   reducedMotion?: boolean;
   /** 点选建筑（射线拾取）回调，参数为建筑下标（0-11）。 */
   onPick?: (index: number) => void;
+  /** WebGL 上下文丢失（回调后由宿主页面决定是否回退 2D）。 */
+  onContextLost?: () => void;
+}
+
+/** 监听 webglcontextlost（preventDefault 以便浏览器恢复上下文）。 */
+function ContextLostProbe({ onLost }: { onLost?: () => void }) {
+  const gl = useThree((s) => s.gl);
+  useEffect(() => {
+    const el = gl.domElement;
+    const handler = (e: Event) => {
+      e.preventDefault();
+      onLost?.();
+    };
+    el.addEventListener('webglcontextlost', handler);
+    return () => el.removeEventListener('webglcontextlost', handler);
+  }, [gl, onLost]);
+  return null;
 }
 
 /** 四街区在连续世界中的锚点（前排：暖灯巷 / 溪桥街；后排：星光坡 / 月湾港）。 */
@@ -561,7 +578,7 @@ function DistrictTerrain({ district, open, reducedMotion }: { district: number; 
 }
 
 /** 糖果夜镇：四街区连续场景 + 运镜。 */
-export function TownScene({ buildings, focusDistrict, focusSlot = null, districtOpen, reducedMotion, onPick }: TownSceneProps) {
+export function TownScene({ buildings, focusDistrict, focusSlot = null, districtOpen, reducedMotion, onPick, onContextLost }: TownSceneProps) {
   const focus = Math.max(0, Math.min(3, focusDistrict));
   const open = districtOpen ?? [true, true, true, true];
   const { viewFrom, viewTarget } = useMemo(() => {
@@ -721,6 +738,7 @@ export function TownScene({ buildings, focusDistrict, focusSlot = null, district
         <Flower key={i} position={[x as number, 0, z as number]} color={c as string} />
       ))}
 
+      <ContextLostProbe onLost={onContextLost} />
       <CameraRig viewFrom={viewFrom} viewTarget={viewTarget} reducedMotion={reducedMotion} />
 
       {/* OrbitControls 默认不监听键盘事件，方向键留给 DOM 焦点层 */}
