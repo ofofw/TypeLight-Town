@@ -1,0 +1,16 @@
+index.html
+  h_b338d6974a9c39 51-52,54,57,59-62,67,70,79,82,85,92,97,102,105,108,113,116,129,140,153,158,196-4862
+light-town/docs/evidence/players-backup-test.json
+  h_b338d6974a9c39 5,8,13-14,70-72,76,97,111,129-132,134-135,144-145,148,150,160-163,173,177,185,193-198,203,206,221,308,313-314,388
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "137b2044212ccc027aadbcf39b0b985d6e464b70",
+  "prompts": {},
+  "humans": {
+    "h_b338d6974a9c39": {
+      "author": "000522 <wangmin@fcbox.com>"
+    }
+  }
+}
