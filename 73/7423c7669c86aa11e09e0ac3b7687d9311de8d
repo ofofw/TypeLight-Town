@@ -1,0 +1,16 @@
+.gitignore
+  h_b338d6974a9c39 13
+README.md
+  h_b338d6974a9c39 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "737423c7669c86aa11e09e0ac3b7687d9311de8d",
+  "prompts": {},
+  "humans": {
+    "h_b338d6974a9c39": {
+      "author": "000522 <wangmin@fcbox.com>"
+    }
+  }
+}
