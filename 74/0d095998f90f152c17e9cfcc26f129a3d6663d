@@ -1,0 +1,22 @@
+light-town/README.md
+  h_b338d6974a9c39 48,52
+light-town/docs/evidence/players-backup-test.json
+  h_b338d6974a9c39 5,8,13-14,70-72,76,97,111,118,126,132,134-136,144-145,148,150,160-163,173,177,185,194-198,206,221,308,313-314,388
+light-town/package.json
+  h_b338d6974a9c39 13
+light-town/tests/e2e/recovery.spec.ts
+  h_b338d6974a9c39 96,99-103,106
+light-town/vite.config.ts
+  h_b338d6974a9c39 10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "740d095998f90f152c17e9cfcc26f129a3d6663d",
+  "prompts": {},
+  "humans": {
+    "h_b338d6974a9c39": {
+      "author": "000522 <wangmin@fcbox.com>"
+    }
+  }
+}
