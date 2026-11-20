@@ -1,0 +1,22 @@
+light-town/scripts/shot-town3d-live.mjs
+  h_b338d6974a9c39 1-47
+light-town/src/styles/global.css
+  h_b338d6974a9c39 1311-1360
+light-town/src/three/TownScene.tsx
+  h_b338d6974a9c39 29-45,581,741
+light-town/src/three/support.ts
+  h_b338d6974a9c39 1-13
+light-town/src/ui/pages/TownPage.tsx
+  h_b338d6974a9c39 1,4,14-20,28-32,52-54,62-72,84-140,204-208,238-302
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2cbdde3b719570f23b72d4d5e881db406f33da2f",
+  "prompts": {},
+  "humans": {
+    "h_b338d6974a9c39": {
+      "author": "000522 <wangmin@fcbox.com>"
+    }
+  }
+}
