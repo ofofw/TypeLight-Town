@@ -1,0 +1,14 @@
+light-town/docs/evidence/players-backup-test.json
+  h_b338d6974a9c39 5,8,13-14,70-72,76,97,111,124,127,131,135-136,144-145,148,150,173,181,185,193,198,206,221,308,313-314,388
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d6a90df3a64d9bbe491148a3f42abd2b95ca101e",
+  "prompts": {},
+  "humans": {
+    "h_b338d6974a9c39": {
+      "author": "000522 <wangmin@fcbox.com>"
+    }
+  }
+}
