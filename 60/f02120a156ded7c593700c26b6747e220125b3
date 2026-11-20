@@ -1,0 +1,16 @@
+light-town/src/three/GreyboxBuilding.tsx
+  h_b338d6974a9c39 207-231,305-318,352-362,408-409
+light-town/src/three/TownScene.tsx
+  h_b338d6974a9c39 45-51,62,77-139,310-313,322-337
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "60f02120a156ded7c593700c26b6747e220125b3",
+  "prompts": {},
+  "humans": {
+    "h_b338d6974a9c39": {
+      "author": "000522 <wangmin@fcbox.com>"
+    }
+  }
+}
