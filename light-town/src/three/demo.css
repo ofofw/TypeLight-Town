@@ -145,3 +145,79 @@
   color: #FFD56B;
   min-width: 130px;
 }
+
+/* ---- 阶段 1 全镇舞台 ---- */
+
+.demo3d__canvas--wide {
+  height: 620px;
+}
+
+.demo3d__districts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1 1 100%;
+}
+
+.demo3d__district {
+  font: inherit;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #3E539A;
+  background: #24366F;
+  color: #F7F2E6;
+  cursor: pointer;
+}
+
+.demo3d__district--on {
+  background: #FFC94D;
+  border-color: #FFC94D;
+  color: #2B1D00;
+  font-weight: 600;
+}
+
+.demo3d__district:focus-visible {
+  outline: 2px solid #FFE38A;
+  outline-offset: 2px;
+}
+
+.demo3d__global {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.demo3d__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #C5CCE6;
+  cursor: pointer;
+}
+
+.demo3d__district-list {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.demo3d__district-list .demo3d__rows {
+  border: 1px solid #3E539A;
+  border-radius: 12px;
+  padding: 10px 14px 14px;
+}
+
+.demo3d__district-list .demo3d__rows legend {
+  padding: 0 6px;
+  color: #C5CCE6;
+  font-size: 13px;
+}
+
+.demo3d__district-list .demo3d__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
