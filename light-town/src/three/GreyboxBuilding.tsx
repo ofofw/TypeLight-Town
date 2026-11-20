@@ -204,6 +204,31 @@ function TopStar({ reducedMotion, position }: { reducedMotion?: boolean; positio
   );
 }
 
+/** 飘动小旗：细杆 + 三角旗轻轻摆（reduce-motion 静止）。 */
+function WavingFlag({ position, color, reducedMotion }: { position: [number, number, number]; color: string; reducedMotion?: boolean }) {
+  const flag = useRef<THREE.Mesh>(null);
+  useFrame((state) => {
+    if (reducedMotion || !flag.current) return;
+    flag.current.rotation.y = Math.sin(state.clock.elapsedTime * 3.2) * 0.35;
+  });
+  return (
+    <group position={position}>
+      <mesh position={[0, 0.28, 0]}>
+        <cylinderGeometry args={[0.02, 0.02, 0.56, 6]} />
+        <meshStandardMaterial color="#93A6DC" roughness={0.7} />
+      </mesh>
+      <mesh ref={flag} position={[0.13, 0.48, 0]}>
+        <coneGeometry args={[0.12, 0.24, 3]} rotation-z={-Math.PI / 2} />
+        <meshStandardMaterial color={color} roughness={0.75} side={THREE.DoubleSide} flatShading />
+      </mesh>
+      <mesh position={[0, 0.57, 0]}>
+        <sphereGeometry args={[0.045, 8, 8]} />
+        <meshStandardMaterial color={CANDY.butter} emissive={CANDY.butter} emissiveIntensity={0.9} />
+      </mesh>
+    </group>
+  );
+}
+
 /** 拱门：方门身 + 半圆门楣。 */
 function ArchedDoor({ width, height, color, position }: { width: number; height: number; color: string; position: [number, number, number] }) {
   return (
@@ -277,6 +302,20 @@ export function GreyboxBuilding({ variant, stage, highlighted, reducedMotion, po
             })
           ))}
           <ArchedDoor width={0.62} height={0.62} color={CANDY.wood} position={[0, 0.01, 1.14]} />
+          {/* 塔基花环：草环 + 小花 */}
+          <mesh position={[0, 0.14, 0]} rotation-x={Math.PI / 2}>
+            <torusGeometry args={[1.22, 0.09, 8, 28]} />
+            <meshStandardMaterial color="#4E927E" roughness={1} />
+          </mesh>
+          {[0, 1, 2, 3, 4, 5].map((i) => {
+            const a = (i / 6) * Math.PI * 2;
+            return (
+              <mesh key={i} position={[Math.cos(a) * 1.28, 0.3, Math.sin(a) * 1.28]}>
+                <sphereGeometry args={[0.07, 8, 8]} />
+                <meshStandardMaterial color={[CANDY.coral, CANDY.butter, CANDY.pink][i % 3]} roughness={0.6} />
+              </mesh>
+            );
+          })}
         </group>
       )}
 
@@ -310,6 +349,17 @@ export function GreyboxBuilding({ variant, stage, highlighted, reducedMotion, po
           {[0, 1, 2].map((i) => (
             <group key={`t${i}`} position={[-0.85 + i * 0.85, 1.02, 1.16]}>
               <ArchedWindow lit={litCount(i)} reducedMotion={reducedMotion} />
+              {/* 窗下花箱 */}
+              <mesh position={[0, -0.4, 0.06]}>
+                <boxGeometry args={[0.46, 0.13, 0.18]} />
+                <meshStandardMaterial color={CANDY.coral} roughness={0.85} />
+              </mesh>
+              {[-0.13, 0, 0.13].map((fx) => (
+                <mesh key={fx} position={[fx, -0.28, 0.06]}>
+                  <sphereGeometry args={[0.055, 8, 8]} />
+                  <meshStandardMaterial color={[CANDY.butter, CANDY.pink, CANDY.cream][i % 3]} roughness={0.6} />
+                </mesh>
+              ))}
             </group>
           ))}
           {[0, 1].map((i) => (
@@ -355,6 +405,8 @@ export function GreyboxBuilding({ variant, stage, highlighted, reducedMotion, po
             <boxGeometry args={[1.75, 0.12, 1.85]} />
             <meshStandardMaterial color={CANDY.teal} roughness={0.9} />
           </mesh>
+          {/* 侧翼角上的飘动小旗 */}
+          <WavingFlag position={[1.72, 1.56, 1.05]} color={CANDY.pink} reducedMotion={reducedMotion} />
           {/* 钟面（贴塔身表面） */}
           <group position={[-0.55, 2.25, 0.96]}>
             <mesh>

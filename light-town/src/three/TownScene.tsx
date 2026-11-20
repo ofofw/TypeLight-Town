@@ -42,8 +42,13 @@ const CANDY = {
   grassDeep: '#3E7D6C',
 } as const;
 
-/** 糖果路灯：条纹灯杆 + 发光圆球灯罩 + 往地面洒暖光。 */
-function CandyLamp({ position }: { position: [number, number, number] }) {
+/** 糖果路灯：条纹灯杆 + 发光圆球灯罩（呼吸感）+ 往地面洒暖光。 */
+function CandyLamp({ position, phase = 0, reducedMotion }: { position: [number, number, number]; phase?: number; reducedMotion?: boolean }) {
+  const bulb = useRef<THREE.MeshStandardMaterial>(null);
+  useFrame((state) => {
+    if (reducedMotion || !bulb.current) return;
+    bulb.current.emissiveIntensity = 1.6 + Math.sin(state.clock.elapsedTime * 1.8 + phase) * 0.3;
+  });
   return (
     <group position={position}>
       {[0, 1, 2, 3].map((i) => (
@@ -54,7 +59,7 @@ function CandyLamp({ position }: { position: [number, number, number] }) {
       ))}
       <mesh position={[0, 2.62, 0]}>
         <sphereGeometry args={[0.24, 16, 16]} />
-        <meshStandardMaterial color={WARM.light} emissive={WARM.light} emissiveIntensity={1.6} />
+        <meshStandardMaterial ref={bulb} color={WARM.light} emissive={WARM.light} emissiveIntensity={1.6} />
       </mesh>
       <mesh position={[0, 2.88, 0]}>
         <coneGeometry args={[0.3, 0.24, 10]} />
@@ -65,6 +70,69 @@ function CandyLamp({ position }: { position: [number, number, number] }) {
         <meshStandardMaterial color={CANDY.butter} roughness={0.7} />
       </mesh>
       <pointLight position={[0, 2.6, 0]} color={WARM.light} intensity={2.6} distance={5.5} decay={2} />
+    </group>
+  );
+}
+
+/** 蘑菇：童话感十足的红帽白点小蘑菇。 */
+function Mushroom({ position, scale = 1 }: { position: [number, number, number]; scale?: number }) {
+  return (
+    <group position={position} scale={scale}>
+      <mesh position={[0, 0.09, 0]}>
+        <cylinderGeometry args={[0.05, 0.07, 0.18, 8]} />
+        <meshStandardMaterial color="#F5E7C8" roughness={0.9} />
+      </mesh>
+      <mesh position={[0, 0.2, 0]} scale={[1, 0.62, 1]}>
+        <sphereGeometry args={[0.16, 12, 10]} />
+        <meshStandardMaterial color={CANDY.coral} roughness={0.8} />
+      </mesh>
+      {[0, 1, 2].map((i) => {
+        const a = (i / 3) * Math.PI * 2;
+        return (
+          <mesh key={i} position={[Math.cos(a) * 0.09, 0.25, Math.sin(a) * 0.09]}>
+            <sphereGeometry args={[0.025, 6, 6]} />
+            <meshStandardMaterial color="#FFF7E0" />
+          </mesh>
+        );
+      })}
+    </group>
+  );
+}
+
+/** 萤火虫：暖光小点在低空慢慢飘（reduce-motion 静止）。 */
+function Fireflies({ count = 9, reducedMotion }: { count?: number; reducedMotion?: boolean }) {
+  const group = useRef<THREE.Group>(null);
+  const seeds = useMemo(
+    () => Array.from({ length: count }, (_, i) => ({
+      base: [(Math.sin(i * 2.3) * 7.5), 0.7 + (i % 4) * 0.35, Math.cos(i * 1.7) * 4 + 0.5] as [number, number, number],
+      r: 0.35 + (i % 3) * 0.18,
+      speed: 0.5 + (i % 4) * 0.14,
+      phase: i * 1.9,
+    })),
+    [count],
+  );
+  useFrame((state) => {
+    if (reducedMotion || !group.current) return;
+    const t = state.clock.elapsedTime;
+    group.current.children.forEach((child, i) => {
+      const s = seeds[i];
+      child.position.set(
+        s.base[0] + Math.cos(t * s.speed + s.phase) * s.r,
+        s.base[1] + Math.sin(t * s.speed * 1.3 + s.phase) * 0.22,
+        s.base[2] + Math.sin(t * s.speed * 0.8 + s.phase) * s.r,
+      );
+      const m = (child as THREE.Mesh).material as THREE.MeshStandardMaterial;
+      m.emissiveIntensity = 1.2 + Math.sin(t * 2.2 + s.phase) * 0.8;
+    });
+  });
+  return (
+    <group ref={group}>
+      {seeds.map((_, i) => (
+        <mesh key={i}>
+          <sphereGeometry args={[0.045, 8, 8]} />
+          <meshStandardMaterial color={WARM.core} emissive={WARM.light} emissiveIntensity={1.2} />
+        </mesh>
+      ))}
     </group>
   );
 }
@@ -239,10 +307,10 @@ export function TownScene({ buildings, reducedMotion, onPick }: TownSceneProps) 
         />
       ))}
 
-      {/* 糖果路灯：路口与路旁 */}
-      <CandyLamp position={[-6.2, 0, 2.6]} />
-      <CandyLamp position={[6.4, 0, 1.2]} />
-      <CandyLamp position={[-2.6, 0, -4.4]} />
+      {/* 糖果路灯：路口与路旁（呼吸相位错开） */}
+      <CandyLamp position={[-6.2, 0, 2.6]} phase={0} reducedMotion={reducedMotion} />
+      <CandyLamp position={[6.4, 0, 1.2]} phase={2.1} reducedMotion={reducedMotion} />
+      <CandyLamp position={[-2.6, 0, -4.4]} phase={4.2} reducedMotion={reducedMotion} />
 
       {/* 彩旗串：两盏路灯之间 + 建筑后方 */}
       <Bunting from={[-6.2, 2.6]} to={[6.4, 1.2]} height={2.7} />
@@ -250,6 +318,22 @@ export function TownScene({ buildings, reducedMotion, onPick }: TownSceneProps) 
 
       {/* 气球束 */}
       <Balloons position={[4.4, 1.6, 2.2]} reducedMotion={reducedMotion} />
+
+      {/* 蘑菇与圆石点缀 */}
+      <Mushroom position={[-7.6, 0, 2.9]} scale={1.1} />
+      <Mushroom position={[-7.0, 0, 3.4]} scale={0.8} />
+      <Mushroom position={[7.1, 0, 3.1]} scale={1.0} />
+      <Mushroom position={[7.9, 0, 2.5]} scale={0.7} />
+      <Mushroom position={[-3.5, 0, 3.2]} scale={0.9} />
+      {[[-5.4, 3.0], [5.1, 2.4], [-8.6, 1.2], [8.9, 0.8], [0.9, 3.3]].map(([x, z], i) => (
+        <mesh key={i} position={[x, 0.04, z]} scale={[1, 0.45, 1]}>
+          <sphereGeometry args={[0.14 + (i % 3) * 0.04, 8, 6]} />
+          <meshStandardMaterial color={i % 2 === 0 ? '#9A8BB8' : '#B0A2CC'} roughness={1} />
+        </mesh>
+      ))}
+
+      {/* 萤火虫（低空漂浮的暖光点） */}
+      <Fireflies reducedMotion={reducedMotion} />
 
       {/* 灌木与花丛 */}
       <Bush position={[-8.8, 0, -1.8]} scale={1.15} />
